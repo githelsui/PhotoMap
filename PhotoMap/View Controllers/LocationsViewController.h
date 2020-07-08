@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LocationsViewControllerDelegate.h"
 @interface LocationsViewController : UIViewController
-
+@property (weak, nonatomic) id<LocationsViewControllerDelegate> delegate;
 @end

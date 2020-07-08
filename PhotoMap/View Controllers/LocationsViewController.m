@@ -8,9 +8,10 @@
 
 #import "LocationsViewController.h"
 #import "LocationCell.h"
+#import "PhotoMapViewController.h"
 
-static NSString * const clientID = @"QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL";
-static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU";
+static NSString * const clientID = @"P4BXGFOR0MLB3UXYDELUV4AKNFSTPISGG2RKJIYF5JZU25Q1";
+static NSString * const clientSecret = @"RUVQ0WYM3MONSD02OUNF4VT12WSFOCJEUX4TYUPOWMIIYXNM";
 
 @interface LocationsViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
@@ -42,6 +43,8 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LocationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
+    NSDictionary *result = self.results[indexPath.row];
+    [cell updateWithLocation:result];
     return cell;
 }
 
@@ -51,6 +54,8 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
     NSNumber *lat = [venue valueForKeyPath:@"location.lat"];
     NSNumber *lng = [venue valueForKeyPath:@"location.lng"];
     NSLog(@"%@, %@", lat, lng);
+    [self.delegate locationsViewController:self didPickLocationWithLatitude:lat longitude:lng];
+    NSLog(@"%s", "delegate not running");
 }
 
 - (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {

@@ -41,6 +41,7 @@
 		6A22E5FD20F2A4AE0052F3C6 /* FullImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullImageViewController.m; sourceTree = "<group>"; };
 		B7CBCF83EE4466FF76810F69 /* libPods-PhotoMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1C7C7224B622C6002FC6FA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CA4FFDB124B62C940057A6AE /* LocationsViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsViewControllerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +109,7 @@
 				6A22E5FA20F2A4A00052F3C6 /* LocationsViewController.m */,
 				6A22E5FC20F2A4AE0052F3C6 /* FullImageViewController.h */,
 				6A22E5FD20F2A4AE0052F3C6 /* FullImageViewController.m */,
+				CA4FFDB124B62C940057A6AE /* LocationsViewControllerDelegate.h */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

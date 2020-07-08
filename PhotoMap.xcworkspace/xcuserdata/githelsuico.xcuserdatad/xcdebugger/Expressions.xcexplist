@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[PhotoMapViewController prepareForSegue:sender:]:PhotoMapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "locationController.delegate">
+            </PersistentString>
+            <PersistentString
+               value = "self.delegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[LocationsViewController tableView:didSelectRowAtIndexPath:]:LocationsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.delegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[PhotoMapViewController prepareForSegue:sender:]:PhotoMapViewController.m">
          <PersistentStrings>
             <PersistentString

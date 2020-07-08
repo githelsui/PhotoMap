@@ -55,7 +55,6 @@ static NSString * const clientSecret = @"RUVQ0WYM3MONSD02OUNF4VT12WSFOCJEUX4TYUP
     NSNumber *lng = [venue valueForKeyPath:@"location.lng"];
     NSLog(@"%@, %@", lat, lng);
     [self.delegate locationsViewController:self didPickLocationWithLatitude:lat longitude:lng];
-    NSLog(@"%s", "delegate not running");
 }
 
 - (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {

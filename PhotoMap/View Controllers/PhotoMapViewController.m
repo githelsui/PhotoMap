@@ -56,12 +56,8 @@
 }
 
 - (void)locationsViewController:(LocationsViewController *)controller didPickLocationWithLatitude:(NSNumber *)latitude longitude:(NSNumber *)longitude{
-    //    UINavigationController *navigationController = [[UINavigationController alloc]init];
-    NSLog(@"%s", "delegate called method in photomap");
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    UINavigationController *navigationController = (UINavigationController*) [storyboard instantiateViewControllerWithIdentifier:@"RootNavigation"];
-//    PhotoMapViewController* photoMap = (PhotoMapViewController*) [storyboard instantiateViewControllerWithIdentifier:@"PhotoMap"];
-//    [navigationController popToViewController:photoMap animated:YES];
+    UINavigationController *navControl = controller.navigationController;
+    [navControl popToViewController:self animated:YES];
 }
 
 
@@ -72,9 +68,8 @@
     //    UINavigationController *navigationController = [segue destinationViewController];
     //    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
     if ([segue.identifier isEqualToString:@"tagSegue"]){
-        LocationsViewController *locationController = [[LocationsViewController alloc]init];
+        LocationsViewController *locationController = [segue destinationViewController];
         locationController.delegate = self;
-        NSLog(@"%s", "delegate set");
     }
 }
 

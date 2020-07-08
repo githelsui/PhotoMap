@@ -58,6 +58,25 @@
 - (void)locationsViewController:(LocationsViewController *)controller didPickLocationWithLatitude:(NSNumber *)latitude longitude:(NSNumber *)longitude{
     UINavigationController *navControl = controller.navigationController;
     [navControl popToViewController:self animated:YES];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude.floatValue, longitude.floatValue);
+    MKPointAnnotation *annotation = [MKPointAnnotation new];
+    annotation.coordinate = coordinate;
+    annotation.title = @"Picture!";
+    [self.mapView addAnnotation:annotation];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    if (annotationView == nil) {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        annotationView.canShowCallout = true;
+        annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
+    }
+    
+    UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
+    imageView.image = [UIImage imageNamed:@"camera"];
+    
+    return annotationView;
 }
 
 
